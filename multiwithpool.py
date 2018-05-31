@@ -12,9 +12,11 @@ allnum = string.digits
 
 def f(x):
     print "process %s run " % x
-    print x * 5000 , '==>' , ( x + 1 ) * 5000
-    i = x * 5000 
-    j = ( x + 1 ) * 5000    
+    print x * 100000 , '==>' , ( x + 1 ) * 100000
+    i = x * 100000 
+    j = ( x + 1 ) * 100000
+    con  = psycopg2.connect("host='localhost' dbname='testdb' user='postgres' password='  22'")
+    cur = con.cursor()
     print "c0nn g00d"
     while i < j:
         name = "".join(random.choice(allchar) for x in range(16))
