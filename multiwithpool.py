@@ -15,13 +15,14 @@ def f(x):
     print x * 5000 , '==>' , ( x + 1 ) * 5000
     i = x * 5000 
     j = ( x + 1 ) * 5000    
-    con  = psycopg2.connect("host='localhost' dbname='testdb' user='postgres' password='  22'")
-    cur = con.cursor()
     print "c0nn g00d"
     while i < j:
         name = "".join(random.choice(allchar) for x in range(16))
-        price = random.randint(100,1100)
-        cur.execute("INSERT INTO Products(Id, Name, Price ) VALUES(%s,%s,%s )", (i , name, price))
+        items = ['Yankin', 'South Okkalapa', 'South Dagon', 'North Dagon', 'North Okkalapa', 'Tarmwe']
+        place = random.choice(items)
+        or_price = random.randint(100,1100)
+        s_price = or_price + 200
+        cur.execute("INSERT INTO products(Id, name, place, original_price,sell_price ) VALUES(%s,%s,%s,%s,%s )", (i , name, place, or_price, s_price))
         i = i + 1
     con.commit()
 
