@@ -1,4 +1,4 @@
-# Python-With-DB
+# Python-With-DB - PostgreSql9.5
 
 It testing for record 1 billion.
 It take between 5 and 10 min to insert.
